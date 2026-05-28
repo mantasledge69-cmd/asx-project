@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asx-analyzer"
+version = "0.1.0"
+description = "Python toolkit for ASX stock analysis, technical indicators, and interactive visualizations"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "ASX Project Contributors"}
+]
+dependencies = [
+    "yfinance>=0.2.40",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "plotly>=5.18.0",
+    "matplotlib>=3.7.0",
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[project.urls]
+Homepage = "https://github.com/mantasledge69-cmd/asx-project"
+Repository = "https://github.com/mantasledge69-cmd/asx-project"

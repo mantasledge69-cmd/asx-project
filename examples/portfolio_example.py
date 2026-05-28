@@ -1,7 +1,7 @@
 """Example: Simple ASX Portfolio Tracker using the analyzer.
 """
 
-from src.asx_analyzer import ASXAnalyzer
+from asx_analyzer import ASXAnalyzer
 import pandas as pd
 
 

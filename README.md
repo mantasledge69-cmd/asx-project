@@ -19,19 +19,36 @@ Built with ❤️ by Grok for the Australian market. Perfect for retail investor
 ```bash
 git clone https://github.com/mantasledge69-cmd/asx-project.git
 cd asx-project
-pip install -r requirements.txt
+pip install -e .
 ```
+
+This installs the package in editable mode so you get the clean `from asx_analyzer import ASXAnalyzer` import. Requirements are pulled automatically from `pyproject.toml`.
+
+You can still use `pip install -r requirements.txt` if you prefer the old way (then use `PYTHONPATH=src`).
 
 ## Quick Start
 
+```bash
+# Install in editable mode (recommended)
+pip install -e .
+```
+
+Then use the clean import:
+
 ```python
-from src.asx_analyzer import ASXAnalyzer
+from asx_analyzer import ASXAnalyzer
 
 analyzer = ASXAnalyzer("BHP")  # BHP Billiton
 analyzer.fetch_data(period="6mo")
 analyzer.add_indicators()
 fig = analyzer.plot()
 fig.show()
+```
+
+If you prefer to run without installing, you can also do:
+
+```bash
+PYTHONPATH=src python your_script.py
 ```
 
 See `examples/` for more scripts.
@@ -42,12 +59,14 @@ See `examples/` for more scripts.
 asx-project/
 ├── README.md
 ├── requirements.txt
+├── pyproject.toml
 ├── src/
+│   ├── __init__.py
 │   └── asx_analyzer.py
 ├── examples/
 │   └── portfolio_example.py
 └── data/
-    └── sample_data.csv (optional)
+    └── sample_asx_stocks.csv
 ```
 
 ## Disclaimer
